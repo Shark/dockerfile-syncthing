@@ -1,6 +1,6 @@
 # dockerfile-syncthing
 
-This repository contains the Dockerfile for [syncthing](https://syncthing.net) based on [library/alpine](https://hub.docker.com/_/alpine).
+This repository contains the Dockerfile for [syncthing](https://syncthing.net) based on [library/alpine](https://hub.docker.com/_/alpine) and can be found as an automated build on [Docker Hub](https://hub.docker.com/r/sh4rk/syncthing/).
 
 ## Usage
 
