@@ -1,8 +1,9 @@
 FROM alpine:3.3
 
-RUN syncthing_version="v0.14.3" && \
-    syncthing_sha256="8e73dca01ddd866247eeaf963abffe1977793c864f2e86466bb02777b49bd6cf" && \
-    apk add --update ca-certificates file && \
+RUN syncthing_version="v0.14.8" && \
+    syncthing_sha256="b561f9e2ef03f0ab78579095d159df8f44e9f0448537230fce31c9c4734721f1" && \
+    apk add --update ca-certificates openssl file && \
+    update-ca-certificates && \
     tempdir=$(mktemp -d) && \
     cd $tempdir && \
     wget -O syncthing.tar.gz  https://github.com/syncthing/syncthing/releases/download/${syncthing_version}/syncthing-linux-amd64-${syncthing_version}.tar.gz && \
@@ -15,7 +16,7 @@ RUN syncthing_version="v0.14.3" && \
     mv syncthing-linux-amd64-${syncthing_version}/syncthing /usr/local/bin && \
     cd / && \
     rm -r $tempdir && \
-    apk del ca-certificates && \
+    apk del ca-certificates openssl && \
     rm -rf /var/cache/apk/* && \
     mkdir /data && \
     adduser -u 500 -h /data -D syncthing
