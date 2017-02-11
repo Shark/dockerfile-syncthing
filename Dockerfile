@@ -1,7 +1,7 @@
 FROM alpine:3.3
 
-RUN syncthing_version="v0.14.9" && \
-    syncthing_sha256="5e4a505e0683d319c0d38f34be3f2bb53c7c7b8c53a7f0b672381271c1fc8ef4" && \
+RUN syncthing_version="v0.14.23" && \
+    syncthing_sha256="c5da6620deb633cb5df880cddb2c79870a7a4beae20f59dd49f5d13df63bb822" && \
     apk add --update ca-certificates openssl file && \
     update-ca-certificates && \
     tempdir=$(mktemp -d) && \
